@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="doc-title">Article — Verso</title>
+  <meta id="meta-description" name="description" content="Read this article on Verso.">
+  <meta name="theme-color" content="#F6F2E9">
+  <link id="canonical-link" rel="canonical" href="https://www.versoblog.example/post.html">
+
+  <meta id="og-type" property="og:type" content="article">
+  <meta id="og-title" property="og:title" content="Verso">
+  <meta id="og-description" property="og:description" content="Read this article on Verso.">
+  <meta id="og-image" property="og:image" content="">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="images/placeholder.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/xmc.css">
+  <link rel="stylesheet" href="css/ree.css">
+  <script src="js/theme.js"></script>
+
+  <!-- Schema.org BlogPosting markup, filled in by JS once the post loads -->
+  <script id="ld-json" type="application/ld+json">{}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="reading-progress"><div class="reading-progress__fill"></div></div>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo"><span class="logo__mark">V</span>Verso</a>
+      <nav class="nav-menu" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="blog.html" class="is-active">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn search-toggle" aria-label="Open search" title="Search (press /)">
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        </button>
+        <button class="icon-btn theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle theme (press t)">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="19" height="19" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="19" height="19" fill="currentColor"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8 6 18M18 6l1.8-1.8" stroke="currentColor" stroke-width="1.6"/></svg>
+        </button>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="search-panel">
+    <div class="search-panel__inner">
+      <div class="search-panel__header">
+        <form role="search" style="flex:1; display:flex;">
+          <input type="search" class="search-input" placeholder="Search articles, topics, tags…" aria-label="Search articles">
+        </form>
+        <button type="button" class="search-panel__close" aria-label="Close search">✕</button>
+      </div>
+      <div class="search-suggestions"><p class="search-suggestions__hint">Type at least two characters to search titles, tags, and categories.</p></div>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- Everything below is populated by the script at the bottom, based on ?slug= -->
+    <article id="post-root" hidden>
+      <section class="post-hero">
+        <div class="post-hero__image-wrap">
+          <img id="post-image" src="" alt="">
+        </div>
+      </section>
+
+      <div class="container" style="max-width: 900px; padding-top: 2rem;">
+        <p class="post-hero__breadcrumb">
+          <a href="index.html">Home</a> / <a href="blog.html">Blog</a> / <span id="post-breadcrumb-category"></span>
+        </p>
+        <span class="badge" id="post-category-badge" style="position:static; display:inline-block; margin-bottom:1rem;"></span>
+        <h1 class="post-title" id="post-title"></h1>
+        <p class="post-excerpt" id="post-excerpt"></p>
+
+        <div class="post-byline">
+          <img id="post-author-avatar" src="" alt="">
+          <div>
+            <span class="post-byline__name" id="post-author-name"></span>
+            <span class="post-byline__meta" id="post-byline-meta"></span>
+          </div>
+        </div>
+
+        <div class="post-toolbar">
+          <button class="icon-btn like-btn" data-action="like" id="post-like-btn" title="Like this post">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 21s-7.5-4.6-10-9C.5 8.5 2 5 5.5 5c2 0 3.5 1 4.5 2.5C11 6 12.5 5 14.5 5 18 5 19.5 8.5 22 12c-2.5 4.4-10 9-10 9z" fill="currentColor"/></svg>
+            <span class="like-count" id="post-like-count"></span>
+          </button>
+          <button class="icon-btn" data-action="share" id="post-share-btn" title="Share this post">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M18 8a3 3 0 1 0-2.83-4H15a3 3 0 0 0 .1 2.6L8.9 10.2a3 3 0 1 0 0 3.6l6.2 3.6a3 3 0 1 0 .9-1.7l-6.2-3.6a3 3 0 0 0 0-1.2l6.2-3.6c.5.4 1.2.7 1.9.7Z" fill="currentColor"/></svg>
+          </button>
+          <button class="icon-btn bookmark-btn" data-action="bookmark" id="post-bookmark-btn" title="Save for later">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1Z" fill="currentColor"/></svg>
+          </button>
+          <button class="icon-btn" data-action="copy-link" title="Copy link">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1"/></svg>
+          </button>
+          <span style="margin-left:auto; font-size:0.82rem; color:var(--ink-faint); align-self:center;" id="post-readtime"></span>
+        </div>
+      </div>
+
+      <div class="container post-layout">
+        <!-- Table of contents (auto-built from H2s in the article) -->
+        <nav class="post-toc" aria-label="Table of contents">
+          <p class="post-toc__title">On this page</p>
+          <ol id="post-toc-list"></ol>
+        </nav>
+
+        <div class="post-content" id="post-content"></div>
+
+        <!-- Sticky share rail -->
+        <div class="share-rail" aria-label="Share this article">
+          <button class="icon-btn" data-action="share" id="rail-share-btn" title="Share">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M18 8a3 3 0 1 0-2.83-4H15a3 3 0 0 0 .1 2.6L8.9 10.2a3 3 0 1 0 0 3.6l6.2 3.6a3 3 0 1 0 .9-1.7l-6.2-3.6a3 3 0 0 0 0-1.2l6.2-3.6c.5.4 1.2.7 1.9.7Z" fill="currentColor"/></svg>
+          </button>
+          <button class="icon-btn like-btn" data-action="like" id="rail-like-btn" title="Like">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 21s-7.5-4.6-10-9C.5 8.5 2 5 5.5 5c2 0 3.5 1 4.5 2.5C11 6 12.5 5 14.5 5 18 5 19.5 8.5 22 12c-2.5 4.4-10 9-10 9z" fill="currentColor"/></svg>
+          </button>
+          <button class="icon-btn bookmark-btn" data-action="bookmark" id="rail-bookmark-btn" title="Save">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1Z" fill="currentColor"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="container" style="max-width: 900px;">
+        <div class="post-footer-tags" id="post-tags"></div>
+
+        <div class="author-box" id="post-author-box"></div>
+
+        <div class="post-nav" id="post-nav"></div>
+
+        <section>
+          <div class="section-head">
+            <div><span class="eyebrow">Keep reading</span><h2 class="section-title" style="font-size:1.5rem;">Related articles</h2></div>
+          </div>
+          <div class="related-grid" id="related-grid"></div>
+        </section>
+
+        <!-- Comments -->
+        <section class="comments">
+          <h2 class="section-title" style="font-size:1.5rem;" id="comments-title">Comments</h2>
+          <form class="comment-form" id="comment-form">
+            <div class="field">
+              <label for="comment-name">Name</label>
+              <input type="text" id="comment-name" required placeholder="Your name">
+            </div>
+            <div class="field">
+              <label for="comment-text">Comment</label>
+              <textarea id="comment-text" required placeholder="Share your thoughts…"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Post comment</button>
+          </form>
+          <div class="comment-list" id="comment-list"></div>
+        </section>
+      </div>
+    </article>
+
+    <!-- Shown if the slug doesn't match any post -->
+    <div class="empty-state" id="post-not-found" hidden>
+      <h3>We couldn't find that article</h3>
+      <p>It may have been moved or the link is out of date.</p>
+      <a href="blog.html" class="btn btn-primary" style="margin-top:1rem;">Back to the blog</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-col footer-about">
+        <a href="index.html" class="logo"><span class="logo__mark">V</span>Verso</a>
+        <p>A reading room for technology, design, science, and the way we live now. Published by a small, independent editorial team.</p>
+        <div class="social-links" style="margin-top:1.25rem;">
+          <a href="#" aria-label="Twitter">𝕏</a><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="RSS feed">RSS</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick links</h4>
+        <ul><li><a href="index.html">Home</a></li><li><a href="blog.html">Blog</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li></ul>
+      </div>
+      <div class="footer-col"><h4>Categories</h4><ul id="footer-categories"></ul></div>
+      <div class="footer-col footer-newsletter">
+        <h4>Stay in the loop</h4>
+        <p style="color:rgba(246,242,233,0.65); font-size:0.88rem;">No spam. Unsubscribe anytime.</p>
+        <form id="footer-newsletter-form"><input type="email" required placeholder="Your email" aria-label="Email address"><button type="submit">Join</button></form>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span data-year></span> Verso. All rights reserved.</p>
+      <div class="social-links"><a href="#" aria-label="Twitter">𝕏</a><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="LinkedIn">in</a></div>
+    </div>
+  </footer>
+
+  <button class="scroll-top-btn" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="js/blog.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/search.js"></script>
+  <script>
+    /* ---------------------------------------------------------------
+       Single post rendering: reads ?slug= from the URL and fills the
+       template above. Also builds the TOC, related posts, prev/next,
+       and a tiny localStorage-backed comment thread.
+       --------------------------------------------------------------- */
+    (function () {
+      "use strict";
+
+      const slug = new URLSearchParams(window.location.search).get("slug");
+      const post = slug && VERSO.getPostBySlug(slug);
+
+      VERSO.renderCategoryList("#footer-categories");
+      document.querySelector("#footer-newsletter-form")?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const input = e.target.querySelector("input[type='email']");
+        if (input.checkValidity()) {
+          localStorage.setItem("verso_subscribed", "1");
+          VersoToast("You're subscribed. Welcome aboard!", "success");
+          e.target.reset();
+        } else {
+          VersoToast("Please enter a valid email address.", "error");
+        }
+      });
+
+      if (!post) {
+        document.getElementById("post-not-found").hidden = false;
+        document.title = "Article not found — Verso";
+        return;
+      }
+
+      const author = VERSO.getAuthor(post.author);
+      const category = VERSO.getCategory(post.category);
+
+      document.getElementById("post-root").hidden = false;
+
+      // --- Meta tags / SEO -------------------------------------------------
+      document.getElementById("doc-title").textContent = `${post.title} — Verso`;
+      document.getElementById("meta-description").setAttribute("content", post.excerpt);
+      document.getElementById("canonical-link").setAttribute("href", `https://www.versoblog.example/post.html?slug=${post.slug}`);
+      document.getElementById("og-title").setAttribute("content", post.title);
+      document.getElementById("og-description").setAttribute("content", post.excerpt);
+      document.getElementById("og-image").setAttribute("content", post.image);
+
+      document.getElementById("ld-json").textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": post.title,
+        "description": post.excerpt,
+        "image": post.image,
+        "datePublished": post.date,
+        "author": { "@type": "Person", "name": author.name },
+        "publisher": { "@type": "Organization", "name": "Verso" },
+        "mainEntityOfPage": `https://www.versoblog.example/post.html?slug=${post.slug}`
+      });
+
+      // --- Hero / byline -----------------------------------------------
+      document.getElementById("post-image").src = post.image;
+      document.getElementById("post-image").alt = post.title;
+      document.getElementById("post-breadcrumb-category").textContent = category.name;
+      document.getElementById("post-category-badge").textContent = `${category.icon} ${category.name}`;
+      document.getElementById("post-title").textContent = post.title;
+      document.getElementById("post-excerpt").textContent = post.excerpt;
+      document.getElementById("post-author-avatar").src = author.avatar;
+      document.getElementById("post-author-avatar").alt = author.name;
+      document.getElementById("post-author-name").textContent = author.name;
+      document.getElementById("post-byline-meta").textContent = `${VERSO.formatDate(post.date)} · ${author.role}`;
+      document.getElementById("post-readtime").textContent = `${post.readTime} min read · ${post.views.toLocaleString()} views`;
+
+      // --- Toolbar buttons (top toolbar + sticky rail share the same state) ---
+      const liked = VERSO.getLikedByMe().includes(post.id);
+      const bookmarked = VERSO.getBookmarks().includes(post.id);
+      [document.getElementById("post-like-btn"), document.getElementById("rail-like-btn")].forEach((btn) => {
+        btn.dataset.id = post.id;
+        btn.setAttribute("aria-pressed", String(liked));
+        btn.classList.toggle("is-active", liked);
+      });
+      document.getElementById("post-like-count").textContent = VERSO.getLikeCount(post).toLocaleString();
+      [document.getElementById("post-bookmark-btn"), document.getElementById("rail-bookmark-btn")].forEach((btn) => {
+        btn.dataset.id = post.id;
+        btn.setAttribute("aria-pressed", String(bookmarked));
+        btn.classList.toggle("is-active", bookmarked);
+      });
+      [document.getElementById("post-share-btn"), document.getElementById("rail-share-btn")].forEach((btn) => {
+        btn.dataset.slug = post.slug;
+        btn.dataset.title = post.title;
+      });
+      // Keep the two like buttons visually in sync when either is clicked
+      document.addEventListener("click", (e) => {
+        if (e.target.closest("[data-action='like']")) {
+          const count = VERSO.getLikeCount(post).toLocaleString();
+          const isLiked = VERSO.getLikedByMe().includes(post.id);
+          document.querySelectorAll(".like-btn").forEach((b) => {
+            b.classList.toggle("is-active", isLiked);
+            b.setAttribute("aria-pressed", String(isLiked));
+            const c = b.querySelector(".like-count");
+            if (c) c.textContent = count;
+          });
+        }
+        if (e.target.closest("[data-action='bookmark']")) {
+          const isSaved = VERSO.getBookmarks().includes(post.id);
+          document.querySelectorAll(".bookmark-btn").forEach((b) => {
+            b.classList.toggle("is-active", isSaved);
+            b.setAttribute("aria-pressed", String(isSaved));
+          });
+        }
+      });
+
+      // --- Article body + table of contents -----------------------------
+      const contentEl = document.getElementById("post-content");
+      contentEl.innerHTML = post.content;
+
+      // --- Instagram Embeds -----------------------------------------------
+if (contentEl.querySelector(".instagram-media")) {
+  if (window.instgrm) {
+    window.instgrm.Embeds.process();
+  } else {
+    const script = document.createElement("script");
+    script.src = "https://www.instagram.com/embed.js";
+    script.async = true;
+
+    script.onload = function () {
+      if (window.instgrm) {
+        window.instgrm.Embeds.process();
+      }
+    };
+
+    document.body.appendChild(script);
+  }
+}
+      const headings = contentEl.querySelectorAll("h2");
+      const tocList = document.getElementById("post-toc-list");
+      tocList.innerHTML = Array.from(headings)
+        .map((h) => `<li><a href="#${h.id}">${h.textContent}</a></li>`)
+        .join("");
+      // Highlight the active TOC entry on scroll
+      const tocLinks = tocList.querySelectorAll("a");
+      const headingObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const link = tocList.querySelector(`a[href="#${entry.target.id}"]`);
+            if (link && entry.isIntersecting) {
+              tocLinks.forEach((l) => l.classList.remove("is-active"));
+              link.classList.add("is-active");
+            }
+          });
+        },
+        { rootMargin: "-20% 0px -70% 0px" }
+      );
+      headings.forEach((h) => headingObserver.observe(h));
+
+      // --- Tags -----------------------------------------------------------
+      document.getElementById("post-tags").innerHTML = post.tags.map((t) => `<a href="blog.html?tag=${t}" class="tag">#${t}</a>`).join("");
+
+      // --- Author box -------------------------------------------------
+      document.getElementById("post-author-box").innerHTML = `
+        <img src="${author.avatar}" alt="${author.name}">
+        <div>
+          <span class="author-box__role">${author.role}</span>
+          <h3 class="author-box__name">${author.name}</h3>
+          <p>${author.bio}</p>
+          <div class="author-box__social">
+            <a class="icon-btn" href="${author.social.twitter}" aria-label="${author.name} on Twitter">𝕏</a>
+            <a class="icon-btn" href="${author.social.linkedin}" aria-label="${author.name} on LinkedIn">in</a>
+          </div>
+        </div>`;
+
+      // --- Prev / next navigation (by publish date order) -----------------
+      const sortedByDate = [...VERSO.posts].sort((a, b) => new Date(a.date) - new Date(b.date));
+      const idx = sortedByDate.findIndex((p) => p.id === post.id);
+      const prev = sortedByDate[idx - 1];
+      const next = sortedByDate[idx + 1];
+      const navEl = document.getElementById("post-nav");
+      navEl.innerHTML = `
+        ${prev ? `<a class="post-nav__link post-nav__link--prev" href="post.html?slug=${prev.slug}"><span class="post-nav__direction">← Previous</span><span class="post-nav__title">${VERSO.escapeHtml(prev.title)}</span></a>` : `<span></span>`}
+        ${next ? `<a class="post-nav__link post-nav__link--next" href="post.html?slug=${next.slug}"><span class="post-nav__direction">Next →</span><span class="post-nav__title">${VERSO.escapeHtml(next.title)}</span></a>` : `<span></span>`}
+      `;
+
+      // --- Related articles (same category, excluding this post) ----------
+      const related = VERSO.posts.filter((p) => p.category === post.category && p.id !== post.id).slice(0, 3);
+      document.getElementById("related-grid").innerHTML = (related.length ? related : VERSO.posts.filter((p) => p.id !== post.id).slice(0, 3))
+        .map(VERSO.renderCard)
+        .join("");
+
+      window.VersoLazyLoad();
+
+      // --- Comments (stored per-post in localStorage) ----------------------
+      const commentsKey = `verso_comments_${post.id}`;
+      function seedComments() {
+        return [
+          { id: 1, name: "Elena Marsh", date: "2 days ago", text: "This completely reframed how I think about the topic. Saving this to re-read next week.", replies: [] },
+          { id: 2, name: "Rahul Bhatt", date: "5 days ago", text: "Curious how this holds up at a larger scale — would love a follow-up piece.", replies: [
+            { id: 21, name: "Maya Okonkwo", date: "4 days ago", text: "Good call — that's actually next on the list!" }
+          ] }
+        ];
+      }
+      function loadComments() {
+        try {
+          const raw = localStorage.getItem(commentsKey);
+          return raw ? JSON.parse(raw) : seedComments();
+        } catch (e) {
+          return seedComments();
+        }
+      }
+      function saveComments(list) {
+        localStorage.setItem(commentsKey, JSON.stringify(list));
+      }
+      function renderComments() {
+        const list = loadComments();
+        const total = list.reduce((sum, c) => sum + 1 + (c.replies?.length || 0), 0);
+        document.getElementById("comments-title").textContent = `Comments (${total})`;
+        document.getElementById("comment-list").innerHTML = list
+          .map(
+            (c) => `
+          <div class="comment" data-comment-id="${c.id}">
+            <img src="https://i.pravatar.cc/100?u=${encodeURIComponent(c.name)}" alt="${VERSO.escapeHtml(c.name)}">
+            <div class="comment__body">
+              <div class="comment__head"><span class="comment__name">${VERSO.escapeHtml(c.name)}</span><span class="comment__date">${c.date}</span></div>
+              <p style="margin:0;">${VERSO.escapeHtml(c.text)}</p>
+              <div class="comment__actions"><button type="button" class="reply-toggle" data-id="${c.id}">Reply</button></div>
+              <form class="reply-form" data-reply-to="${c.id}">
+                <input type="text" required placeholder="Your name" class="reply-name">
+                <textarea required placeholder="Write a reply…" class="reply-text" style="min-height:70px;"></textarea>
+                <button type="submit" class="btn btn-secondary" style="align-self:flex-start;">Post reply</button>
+              </form>
+              ${(c.replies || [])
+                .map(
+                  (r) => `
+                <div class="comment comment--reply" style="margin-top:1rem;">
+                  <img src="https://i.pravatar.cc/100?u=${encodeURIComponent(r.name)}" alt="${VERSO.escapeHtml(r.name)}">
+                  <div class="comment__body">
+                    <div class="comment__head"><span class="comment__name">${VERSO.escapeHtml(r.name)}</span><span class="comment__date">${r.date}</span></div>
+                    <p style="margin:0;">${VERSO.escapeHtml(r.text)}</p>
+                  </div>
+                </div>`
+                )
+                .join("")}
+            </div>
+          </div>`
+          )
+          .join("");
+
+        // Wire up reply toggles + forms freshly each render
+        document.querySelectorAll(".reply-toggle").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const form = document.querySelector(`.reply-form[data-reply-to="${btn.dataset.id}"]`);
+            form.classList.toggle("is-open");
+          });
+        });
+        document.querySelectorAll(".reply-form").forEach((form) => {
+          form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const name = form.querySelector(".reply-name").value.trim();
+            const text = form.querySelector(".reply-text").value.trim();
+            if (!name || !text) return;
+            const comments = loadComments();
+            const parent = comments.find((c) => c.id === Number(form.dataset.replyTo));
+            parent.replies = parent.replies || [];
+            parent.replies.push({ id: Date.now(), name, date: "just now", text });
+            saveComments(comments);
+            renderComments();
+            VersoToast("Reply posted");
+          });
+        });
+      }
+      renderComments();
+
+      document.getElementById("comment-form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = document.getElementById("comment-name").value.trim();
+        const text = document.getElementById("comment-text").value.trim();
+        if (!name || !text) return;
+        const comments = loadComments();
+        comments.unshift({ id: Date.now(), name, date: "just now", text, replies: [] });
+        saveComments(comments);
+        renderComments();
+        e.target.reset();
+        VersoToast("Comment posted — thanks for reading!", "success");
+      });
+    })();
+  </script>
+</body>
+</html>

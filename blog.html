@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Verso</title>
+  <meta name="description" content="Browse every article on Verso: filter by category or tag, search the archive, and sort by newest, oldest, or most read.">
+  <meta name="theme-color" content="#F6F2E9">
+  <link rel="canonical" href="https://www.versoblog.example/blog.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Blog — Verso">
+  <meta property="og:description" content="Browse every article on Verso: filter by category or tag, search the archive, and sort by newest, oldest, or most read.">
+  <meta property="og:image" content="https://picsum.photos/id/1/1200/700">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="images/placeholder.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/xmc.css">
+  <link rel="stylesheet" href="css/ree.css">
+  <script src="js/theme.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo"><span class="logo__mark">V</span>Verso</a>
+      <nav class="nav-menu" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="blog.html" class="is-active">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn search-toggle" aria-label="Open search" title="Search (press /)">
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        </button>
+        <button class="icon-btn theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle theme (press t)">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="19" height="19" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="19" height="19" fill="currentColor"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8 6 18M18 6l1.8-1.8" stroke="currentColor" stroke-width="1.6"/></svg>
+        </button>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="search-panel">
+    <div class="search-panel__inner">
+      <div class="search-panel__header">
+        <form role="search" style="flex:1; display:flex;">
+          <input type="search" class="search-input" placeholder="Search articles, topics, tags…" aria-label="Search articles">
+        </form>
+        <button type="button" class="search-panel__close" aria-label="Close search">✕</button>
+      </div>
+      <div class="search-suggestions"><p class="search-suggestions__hint">Type at least two characters to search titles, tags, and categories.</p></div>
+    </div>
+  </div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow" style="justify-content:center;">The archive</span>
+        <h1 class="page-hero__title">Every article, in one place</h1>
+        <p class="page-hero__sub">Twenty essays and counting, on the tools we build, the way we work, and the world we're building it in.</p>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container grid-main">
+        <div class="main-col">
+          <div class="listing-toolbar">
+            <div class="listing-toolbar__filters">
+              <div class="select-wrap">
+                <select id="category-select" aria-label="Filter by category">
+                  <option value="all">All categories</option>
+                </select>
+              </div>
+              <div class="select-wrap">
+                <select id="tag-select" aria-label="Filter by tag">
+                  <option value="all">All tags</option>
+                </select>
+              </div>
+              <div class="select-wrap">
+                <select id="sort-select" aria-label="Sort articles">
+                  <option value="newest">Newest first</option>
+                  <option value="oldest">Oldest first</option>
+                  <option value="popular">Most viewed</option>
+                  <option value="liked">Most liked</option>
+                </select>
+              </div>
+              <button class="chip" id="bookmarks-only-toggle" aria-pressed="false">🔖 Bookmarked only</button>
+            </div>
+            <span class="listing-toolbar__result-count" id="result-count"></span>
+          </div>
+
+          <div class="card-grid" id="blog-grid" data-skeleton-target data-skeleton-count="6"></div>
+          <nav class="pagination" id="pagination" aria-label="Pagination"></nav>
+        </div>
+
+        <aside class="sidebar" aria-label="Sidebar">
+          <div class="widget">
+            <h3 class="widget__title">Search the archive</h3>
+            <form class="widget__search" role="search" id="sidebar-search-form">
+              <input type="search" placeholder="Search…" aria-label="Search" id="sidebar-search-input">
+              <button type="submit" aria-label="Search">
+                <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+              </button>
+            </form>
+          </div>
+          <div class="widget">
+            <h3 class="widget__title">Categories</h3>
+            <ul class="category-list" id="sidebar-categories"></ul>
+          </div>
+          <div class="widget">
+            <h3 class="widget__title">Recent posts</h3>
+            <ul class="mini-post-list" id="sidebar-recent"></ul>
+          </div>
+          <div class="widget widget-newsletter">
+            <h3 class="widget__title">📬 The Sunday Read</h3>
+            <p>One email, once a week: the best of Verso, curated by our editors.</p>
+            <form id="sidebar-newsletter-form">
+              <input type="email" required placeholder="you@example.com" aria-label="Email address">
+              <button type="submit" class="btn btn-primary btn-block">Subscribe</button>
+            </form>
+          </div>
+          <div class="widget">
+            <h3 class="widget__title">Tags</h3>
+            <div class="tag-cloud" id="sidebar-tags"></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-col footer-about">
+        <a href="index.html" class="logo"><span class="logo__mark">V</span>Verso</a>
+        <p>A reading room for technology, design, science, and the way we live now. Published by a small, independent editorial team.</p>
+        <div class="social-links" style="margin-top:1.25rem;">
+          <a href="#" aria-label="Twitter">𝕏</a><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="RSS feed">RSS</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick links</h4>
+        <ul><li><a href="index.html">Home</a></li><li><a href="blog.html">Blog</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li></ul>
+      </div>
+      <div class="footer-col"><h4>Categories</h4><ul id="footer-categories"></ul></div>
+      <div class="footer-col footer-newsletter">
+        <h4>Stay in the loop</h4>
+        <p style="color:rgba(246,242,233,0.65); font-size:0.88rem;">No spam. Unsubscribe anytime.</p>
+        <form id="footer-newsletter-form"><input type="email" required placeholder="Your email" aria-label="Email address"><button type="submit">Join</button></form>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span data-year></span> Verso. All rights reserved.</p>
+      <div class="social-links"><a href="#" aria-label="Twitter">𝕏</a><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="LinkedIn">in</a></div>
+    </div>
+  </footer>
+
+  <div class="newsletter-popup">
+    <div class="newsletter-popup__card">
+      <button type="button" class="newsletter-popup__close" data-close-popup aria-label="Close">✕</button>
+      <div class="newsletter-popup__icon">📖</div>
+      <h3>Enjoying Verso so far?</h3>
+      <p>Get our best articles delivered every Sunday morning — no noise, just the good stuff.</p>
+      <form><input type="email" required placeholder="you@example.com" aria-label="Email address"><button type="submit" class="btn btn-primary">Subscribe</button></form>
+      <p style="font-size:0.78rem; margin-top:1rem;"><button type="button" data-close-popup style="background:none;border:none;color:var(--ink-faint);text-decoration:underline;">No thanks, maybe later</button></p>
+    </div>
+  </div>
+
+  <button class="scroll-top-btn" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="js/blog.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/pagination.js"></script>
+  <script>
+    /* ---------------------------------------------------------------
+       Blog listing logic: filter by category/tag/search, sort, paginate
+       --------------------------------------------------------------- */
+    (function () {
+      "use strict";
+
+      const PER_PAGE = 6;
+      const params = new URLSearchParams(window.location.search);
+
+      const state = {
+        category: params.get("category") || "all",
+        tag: params.get("tag") || "all",
+        search: params.get("search") || "",
+        sort: "newest",
+        bookmarksOnly: false,
+        page: 1
+      };
+
+      const categorySelect = document.getElementById("category-select");
+      const tagSelect = document.getElementById("tag-select");
+      const sortSelect = document.getElementById("sort-select");
+      const grid = document.getElementById("blog-grid");
+      const resultCount = document.getElementById("result-count");
+      const paginationEl = document.getElementById("pagination");
+      const bookmarksToggle = document.getElementById("bookmarks-only-toggle");
+
+      // Populate filter dropdowns
+      categorySelect.innerHTML += VERSO.categories.map((c) => `<option value="${c.id}">${c.icon} ${c.name}</option>`).join("");
+      tagSelect.innerHTML += VERSO.tags.map((t) => `<option value="${t}">#${t}</option>`).join("");
+      categorySelect.value = state.category;
+      tagSelect.value = state.tag;
+
+      function getFilteredSorted() {
+        let list = [...VERSO.posts];
+
+        if (state.category !== "all") list = list.filter((p) => p.category === state.category);
+        if (state.tag !== "all") list = list.filter((p) => p.tags.includes(state.tag));
+        if (state.bookmarksOnly) {
+          const saved = VERSO.getBookmarks();
+          list = list.filter((p) => saved.includes(p.id));
+        }
+        if (state.search.trim()) {
+          const q = state.search.trim().toLowerCase();
+          list = list.filter((p) => {
+            const haystack = `${p.title} ${p.excerpt} ${p.tags.join(" ")} ${VERSO.getCategory(p.category).name} ${VERSO.getAuthor(p.author).name}`.toLowerCase();
+            return haystack.includes(q);
+          });
+        }
+
+        switch (state.sort) {
+          case "oldest": list.sort((a, b) => new Date(a.date) - new Date(b.date)); break;
+          case "popular": list.sort((a, b) => b.views - a.views); break;
+          case "liked": list.sort((a, b) => VERSO.getLikeCount(b) - VERSO.getLikeCount(a)); break;
+          default: list.sort((a, b) => new Date(b.date) - new Date(a.date));
+        }
+        return list;
+      }
+
+      function render() {
+        const list = getFilteredSorted();
+        const totalPages = Math.max(1, Math.ceil(list.length / PER_PAGE));
+        state.page = Math.min(state.page, totalPages);
+        const pageItems = VersoPagination.paginate(list, state.page, PER_PAGE);
+
+        resultCount.textContent = state.search
+          ? `${list.length} result${list.length === 1 ? "" : "s"} for "${state.search}"`
+          : `${list.length} article${list.length === 1 ? "" : "s"}`;
+
+        grid.innerHTML = pageItems.length
+          ? pageItems.map(VERSO.renderCard).join("")
+          : `<div class="empty-state" style="grid-column:1/-1;"><h3>No articles match those filters</h3><p>Try clearing a filter or searching a different term.</p></div>`;
+
+        window.VersoLazyLoad();
+        VersoPagination.renderControls(paginationEl, state.page, totalPages, (page) => {
+          state.page = page;
+          render();
+          window.scrollTo({ top: grid.offsetTop - 110, behavior: "smooth" });
+        });
+      }
+
+      categorySelect.addEventListener("change", () => { state.category = categorySelect.value; state.page = 1; render(); });
+      tagSelect.addEventListener("change", () => { state.tag = tagSelect.value; state.page = 1; render(); });
+      sortSelect.addEventListener("change", () => { state.sort = sortSelect.value; state.page = 1; render(); });
+      bookmarksToggle.addEventListener("click", () => {
+        state.bookmarksOnly = !state.bookmarksOnly;
+        bookmarksToggle.classList.toggle("is-active", state.bookmarksOnly);
+        bookmarksToggle.setAttribute("aria-pressed", String(state.bookmarksOnly));
+        state.page = 1;
+        render();
+      });
+
+      if (params.get("bookmarks") === "1") {
+        state.bookmarksOnly = true;
+        bookmarksToggle.classList.add("is-active");
+        bookmarksToggle.setAttribute("aria-pressed", "true");
+      }
+
+      // Sidebar search box also drives the main listing search
+      const sidebarSearchInput = document.getElementById("sidebar-search-input");
+      sidebarSearchInput.value = state.search;
+      document.getElementById("sidebar-search-form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        state.search = sidebarSearchInput.value.trim();
+        state.page = 1;
+        render();
+      });
+
+      render();
+
+      // Sidebar widgets
+      VERSO.renderCategoryList("#sidebar-categories");
+      VERSO.renderRecentPosts("#sidebar-recent");
+      VERSO.renderTagCloud("#sidebar-tags");
+      VERSO.renderCategoryList("#footer-categories");
+
+      [ "#sidebar-newsletter-form", "#footer-newsletter-form" ].forEach((selector) => {
+        document.querySelector(selector)?.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const input = e.target.querySelector("input[type='email']");
+          if (input.checkValidity()) {
+            localStorage.setItem("verso_subscribed", "1");
+            VersoToast("You're subscribed. Welcome aboard!", "success");
+            e.target.reset();
+          } else {
+            VersoToast("Please enter a valid email address.", "error");
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

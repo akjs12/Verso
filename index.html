@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Verso — Ideas Worth Slowing Down For</title>
+
+  <meta name="description"
+    content="Verso is a reading room for technology, design, science, and the way we live now. Long-form articles, written to be read, not skimmed.">
+
+  <meta name="theme-color" content="#F6F2E9">
+
+  <link rel="canonical" href="https://www.versoblog.example/index.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Verso — Ideas Worth Slowing Down For">
+  <meta property="og:description"
+    content="A reading room for technology, design, science, and the way we live now.">
+  <meta property="og:image" content="https://picsum.photos/id/0/1200/700">
+  <meta property="og:url" href="https://www.versoblog.example/index.html">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Verso — Ideas Worth Slowing Down For">
+  <meta name="twitter:description"
+    content="A reading room for technology, design, science, and the way we live now.">
+  <meta name="twitter:image" content="https://picsum.photos/id/0/1200/700">
+
+  <link rel="icon" href="images/placeholder.svg" type="image/svg+xml">
+
+  <link rel="stylesheet" href="css/xmc.css">
+  <link rel="stylesheet" href="css/ree.css">
+
+    <!-- Theme -->
+  <script src="js/theme.js"></script>
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Verso",
+    "url": "https://www.versoblog.example/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.versoblog.example/blog.html?search={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <style>
+    /* =========================================================
+       SOCIAL MEDIA ICONS
+       ========================================================= */
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .social-links a {
+      width: 38px;
+      height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      text-decoration: none;
+      transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-3px);
+    }
+
+    .social-links svg {
+      width: 19px;
+      height: 19px;
+      display: block;
+    }
+
+    /* Footer social icons */
+    .footer-about .social-links a,
+    .footer-bottom .social-links a {
+      color: inherit;
+    }
+
+    .social-links a:hover {
+      background: rgba(255,255,255,0.12);
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================= HEADER ============================= -->
+
+  <header class="site-header">
+
+    <div class="container">
+
+      <a href="index.html" class="logo">
+        <img src="images/IMG_20260827_145928.png" alt="Verso Logo">
+      </a>
+
+      <nav class="nav-menu" aria-label="Primary">
+        <a href="index.html" class="is-active">Home</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+
+      <div class="header-actions">
+
+        <button
+          class="icon-btn search-toggle"
+          aria-label="Open search"
+          title="Search (press /)">
+
+          <svg
+            viewBox="0 0 24 24"
+            width="19"
+            height="19"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2">
+
+            <circle cx="11" cy="11" r="7"/>
+            <path d="M21 21l-4.3-4.3"/>
+
+          </svg>
+
+        </button>
+
+        <button
+          class="icon-btn theme-toggle"
+          aria-label="Toggle dark mode"
+          aria-pressed="false"
+          title="Toggle theme (press t)">
+
+          <svg
+            class="icon-moon"
+            viewBox="0 0 24 24"
+            width="19"
+            height="19"
+            fill="currentColor">
+
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/>
+
+          </svg>
+
+          <svg
+            class="icon-sun"
+            viewBox="0 0 24 24"
+            width="19"
+            height="19"
+            fill="currentColor">
+
+            <circle cx="12" cy="12" r="4.5"/>
+
+            <path
+              d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8 6 18M18 6l1.8-1.8"
+              stroke="currentColor"
+              stroke-width="1.6"/>
+
+          </svg>
+
+        </button>
+
+        <button
+          class="nav-toggle"
+          aria-label="Open menu"
+          aria-expanded="false">
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- ============================= SEARCH ============================= -->
+
+  <div class="search-panel">
+
+    <div class="search-panel__inner">
+
+      <div class="search-panel__header">
+
+        <form role="search" style="flex:1; display:flex;">
+
+          <input
+            type="search"
+            class="search-input"
+            placeholder="Search articles, topics, tags…"
+            aria-label="Search articles">
+
+        </form>
+
+        <button
+          type="button"
+          class="search-panel__close"
+          aria-label="Close search">
+
+          ✕
+
+        </button>
+
+      </div>
+
+      <div class="search-suggestions">
+
+        <p class="search-suggestions__hint">
+          Type at least two characters to search titles, tags, and categories.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <main id="main">
+
+    <!-- ============================= HERO ============================= -->
+
+    <section class="hero">
+
+      <div class="container hero__grid">
+
+        <div>
+
+          <p class="hero__eyebrow">
+            Issue 47 · Est. reading time, unhurried
+          </p>
+
+          <h1 class="hero__title">
+            Ideas worth <em>slowing down</em> for.
+          </h1>
+
+          <p class="hero__lede">
+            Verso is a reading room for technology, design, science,
+            and the way we live now — long-form articles written to be
+            read, not skimmed.
+          </p>
+
+          <div class="hero__actions">
+
+            <a href="blog.html" class="btn btn-primary">
+              Start reading
+            </a>
+
+            <a href="about.html" class="btn btn-secondary">
+              About Verso
+            </a>
+
+          </div>
+
+          <div class="hero__stats">
+
+            <div>
+              <div class="hero__stat-value">
+                <span data-counter="20">0</span>
+              </div>
+
+              <div class="hero__stat-label">
+                Articles published
+              </div>
+            </div>
+
+            <div>
+              <div class="hero__stat-value">
+                <span data-counter="8">0</span>
+              </div>
+
+              <div class="hero__stat-label">
+                Regular categories
+              </div>
+            </div>
+
+            <div>
+              <div class="hero__stat-value">
+                <span data-counter="42">0</span>k
+              </div>
+
+              <div class="hero__stat-label">
+                Monthly readers
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <a
+  href="post.html?slug=c-programming-why-it-still-matters-in-2026"
+  class="hero__feature"
+  id="hero-feature">
+
+  <img
+    src="images/C programming.png"
+    alt="C Programming: Why It Still Matters in 2026">
+
+  <div class="hero__feature-content">
+
+    <span class="hero__feature-badge">
+      Featured · Programming
+    </span>
+
+    <h2 class="hero__feature-title">
+      C Programming: Why It Still Matters in 2026
+    </h2>
+
+    <div class="hero__feature-meta">
+      <span>VERSO</span>
+      <span class="dot">•</span>
+      <span>6 min read</span>
+    </div>
+
+  </div>
+
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- ====================== FEATURED ARTICLES ====================== -->
+
+    <section class="section section--tight">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div>
+
+            <span class="eyebrow">
+              Editor's picks
+            </span>
+
+            <h2 class="section-title">
+              Currently featured
+            </h2>
+
+          </div>
+
+          <a href="blog.html" class="view-all-link">
+            View all articles →
+          </a>
+
+        </div>
+
+        <div
+          class="featured-strip"
+          id="featured-strip">
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ============================ MAIN GRID ============================ -->
+
+    <section class="section section--tight">
+
+      <div class="container grid-main">
+
+        <div class="main-col">
+
+          <div class="section-head">
+
+            <div>
+
+              <span class="eyebrow">
+                Fresh off the press
+              </span>
+
+              <h2 class="section-title">
+                Latest articles
+              </h2>
+
+            </div>
+
+          </div>
+
+          <div
+            class="category-chip-row"
+            id="home-category-filters">
+          </div>
+
+          <div
+            class="card-grid"
+            id="home-post-grid"
+            data-skeleton-target
+            data-skeleton-count="6">
+          </div>
+
+          <div style="text-align:center; margin-top: 2.5rem;">
+
+            <a
+              href="blog.html"
+              class="btn btn-secondary">
+
+              Browse the full archive
+
+            </a>
+
+          </div>
+
+        </div>
+
+      <!-- ============================ SIDEBAR ============================ -->
+
+        <aside class="sidebar" aria-label="Sidebar">
+
+          <div class="widget">
+
+            <h3 class="widget__title">
+              Search the archive
+            </h3>
+
+            <form
+              class="widget__search"
+              role="search"
+              id="sidebar-search-form">
+
+              <input
+                type="search"
+                placeholder="Search…"
+                aria-label="Search">
+
+              <button
+                type="submit"
+                aria-label="Search">
+
+                <svg
+                  viewBox="0 0 24 24"
+                  width="17"
+                  height="17"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2">
+
+                  <circle cx="11" cy="11" r="7"/>
+                  <path d="M21 21l-4.3-4.3"/>
+
+                </svg>
+
+              </button>
+
+            </form>
+
+          </div>
+
+
+          <div class="widget">
+
+            <h3 class="widget__title">
+              Categories
+            </h3>
+
+            <ul
+              class="category-list"
+              id="sidebar-categories">
+            </ul>
+
+          </div>
+
+
+          <div class="widget">
+
+            <h3 class="widget__title">
+              Popular this month
+            </h3>
+
+            <ul
+              class="mini-post-list"
+              id="sidebar-popular">
+            </ul>
+
+          </div>
+
+
+          <div class="widget widget-newsletter">
+
+            <h3 class="widget__title">
+              📬 The Sunday Read
+            </h3>
+
+            <p>
+              One email, once a week: the best of Verso,
+              curated by our editors.
+            </p>
+
+            <form id="sidebar-newsletter-form">
+
+              <input
+                type="email"
+                required
+                placeholder="you@example.com"
+                aria-label="Email address">
+
+              <button
+                type="submit"
+                class="btn btn-primary btn-block">
+
+                Subscribe
+
+              </button>
+
+            </form>
+
+          </div>
+
+
+          <div class="widget">
+
+            <h3 class="widget__title">
+              Tags
+            </h3>
+
+            <div
+              class="tag-cloud"
+              id="sidebar-tags">
+            </div>
+
+          </div>
+
+        </aside>
+
+      </div>
+
+    </section>
+
+    <!-- ============================ FAQ ============================ -->
+
+    <section class="section section--tight">
+
+      <div
+        class="container"
+        style="max-width: 820px;">
+
+        <div class="section-head">
+
+          <div>
+
+            <span class="eyebrow">
+              Good to know
+            </span>
+
+            <h2 class="section-title">
+              Frequently asked questions
+            </h2>
+
+          </div>
+
+        </div>
+
+        <div
+          class="faq-list"
+          id="faq-list">
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ============================= FOOTER ============================= -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-top">
+
+
+      <!-- ABOUT -->
+
+      <div class="footer-col footer-about">
+
+        <a href="index.html" class="logo">
+
+          <img
+            src="images/IMG_20260827_145928.png"
+            alt="Verso Logo">
+
+        </a>
+
+        <p>
+          A reading room for technology, design, science,
+          and the way we live now. Published by a small,
+          independent editorial team.
+        </p>
+
+
+        <!-- SOCIAL MEDIA -->
+
+        <div
+          class="social-links"
+          style="margin-top:1.25rem;">
+
+          <!-- X / Twitter -->
+
+          <a
+            href="#"
+            aria-label="X"
+            title="X">
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true">
+
+              <path d="M18.244 2H21.5l-7.11 8.13L22.75 22h-6.57l-5.14-6.73L5.15 22H1.89l7.61-8.7L1.5 2h6.74l4.65 6.14L18.244 2Zm-1.15 17.86h1.8L7.22 4.02H5.29L17.094 19.86Z"/>
+
+            </svg>
+
+          </a>
+
+
+          <!-- Instagram -->
+
+          <a
+            href="https://www.instagram.com/akash_jadhav_14?igsi=MWh5ZHBkMnVkZ2pjag=="
+            aria-label="Instagram"
+            title="Instagram">
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              aria-hidden="true">
+
+              <rect
+                x="3"
+                y="3"
+                width="18"
+                height="18"
+                rx="5"/>
+
+              <circle
+                cx="12"
+                cy="12"
+                r="4"/>
+
+              <circle
+                cx="17.5"
+                cy="6.5"
+                r="1"
+                fill="currentColor"
+                stroke="none"/>
+
+            </svg>
+
+          </a>
+
+          <!-- LINKEDIN -->
+
+          <a
+            href="https://www.linkedin.com/in/akash-jadhav-b55a06274"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            title="LinkedIn">
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true">
+
+              <path d="M20.45 20.45h-3.56v-5.58c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.68H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.26 2.37 4.26 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/>
+
+            </svg>
+
+          </a>
+
+
+          <!-- RSS -->
+
+          <a
+            href="#"
+            aria-label="RSS Feed"
+            title="RSS Feed">
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true">
+
+              <circle cx="5" cy="19" r="2"/>
+
+              <path d="M4 11a9 9 0 0 1 9 9h-3a6 6 0 0 0-6-6v-3Z"/>
+
+              <path d="M4 4a16 16 0 0 1 16 16h-3A13 13 0 0 0 4 7V4Z"/>
+
+            </svg>
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- QUICK LINKS -->
+
+      <div class="footer-col">
+
+        <h4>Quick links</h4>
+
+        <ul>
+
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+
+          <li>
+            <a href="blog.html">Blog</a>
+          </li>
+
+          <li>
+            <a href="about.html">About</a>
+          </li>
+
+          <li>
+            <a href="contact.html">Contact</a>
+          </li>
+
+          <li>
+            <a href="privacy.html">
+              Privacy Policy
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- CATEGORIES -->
+
+      <div class="footer-col">
+
+        <h4>Categories</h4>
+
+        <ul id="footer-categories"></ul>
+
+      </div>
+
+
+      <!-- NEWSLETTER -->
+
+      <div class="footer-col footer-newsletter">
+
+        <h4>Stay in the loop</h4>
+
+        <p
+          style="color:rgba(246,242,233,0.65); font-size:0.88rem;">
+
+          No spam. Unsubscribe anytime.
+
+        </p>
+
+        <form id="footer-newsletter-form">
+
+          <input
+            type="email"
+            required
+            placeholder="Your email"
+            aria-label="Email address">
+
+          <button type="submit">
+            Join
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+    <!-- ============================= FOOTER BOTTOM ============================= -->
+
+    <div class="container footer-bottom">
+
+      <p>
+        © <span data-year></span>
+        Verso. All rights reserved.
+      </p>
+
+
+      <!-- SOCIAL MEDIA -->
+
+      <div class="social-links">
+
+
+        <!-- X -->
+
+        <a
+          href="#"
+          aria-label="X"
+          title="X">
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true">
+
+            <path d="M18.244 2H21.5l-7.11 8.13L22.75 22h-6.57l-5.14-6.73L5.15 22H1.89l7.61-8.7L1.5 2h6.74l4.65 6.14L18.244 2Zm-1.15 17.86h1.8L7.22 4.02H5.29L17.094 19.86Z"/>
+
+          </svg>
+
+        </a>
+
+
+        <!-- INSTAGRAM -->
+
+        <a
+          href="https://www.instagram.com/akash_jadhav_14?igsi=MWh5ZHBkMnVkZ2pjag=="
+          aria-label="Instagram"
+          title="Instagram">
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            aria-hidden="true">
+
+            <rect
+              x="3"
+              y="3"
+              width="18"
+              height="18"
+              rx="5"/>
+
+            <circle
+              cx="12"
+              cy="12"
+              r="4"/>
+
+            <circle
+              cx="17.5"
+              cy="6.5"
+              r="1"
+              fill="currentColor"
+              stroke="none"/>
+
+          </svg>
+
+        </a>
+
+
+        <!-- LINKEDIN -->
+
+        <a
+          href="https://www.linkedin.com/in/akash-jadhav-b55a06274"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+          title="LinkedIn">
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true">
+
+            <path d="M20.45 20.45h-3.56v-5.58c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.68H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.26 2.37 4.26 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/>
+
+            </svg>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ============================= NEWSLETTER POPUP ============================= -->
+
+  <div class="newsletter-popup">
+
+    <div class="newsletter-popup__card">
+
+      <button
+        type="button"
+        class="newsletter-popup__close"
+        data-close-popup
+        aria-label="Close">
+
+        ✕
+
+      </button>
+
+      <div class="newsletter-popup__icon">
+        📖
+      </div>
+
+      <h3>
+        Enjoying Verso so far?
+      </h3>
+
+      <p>
+        Get our best articles delivered every Sunday morning —
+        no noise, just the good stuff.
+      </p>
+
+      <form>
+
+        <input
+          type="email"
+          required
+          placeholder="you@example.com"
+          aria-label="Email address">
+
+        <button
+          type="submit"
+          class="btn btn-primary">
+
+          Subscribe
+
+        </button>
+
+      </form>
+
+      <p
+        style="font-size:0.78rem; margin-top:1rem;">
+
+        <button
+          type="button"
+          data-close-popup
+          style="background:none;border:none;color:var(--ink-faint);text-decoration:underline;">
+
+          No thanks, maybe later
+
+        </button>
+
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- ============================= SCROLL TOP ============================= -->
+
+  <button
+    class="scroll-top-btn"
+    aria-label="Scroll to top">
+
+    <svg
+      viewBox="0 0 24 24"
+      width="18"
+      height="18"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2.4">
+
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+
+    </svg>
+
+  </button>
+
+
+  <!-- ============================= JAVASCRIPT ============================= -->
+
+  <script src="js/blog.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/pagination.js"></script>
+
+
+  <script>
+
+    /* ---------------------------------------------------------------
+       Home page rendering
+       --------------------------------------------------------------- */
+
+    (function () {
+
+      "use strict";
+
+
+      /* Featured strip */
+
+      const featured =
+        VERSO.posts
+          .filter((p) => p.featured)
+          .slice(0, 3);
+
+      document.getElementById("featured-strip").innerHTML =
+        featured.map(VERSO.renderCard).join("");
+
+
+      /* Latest posts */
+
+      let activeCategory = "all";
+
+      const grid =
+        document.getElementById("home-post-grid");
+
+
+      function renderGrid() {
+
+        const list =
+          [...VERSO.posts]
+            .filter(
+              (p) =>
+                activeCategory === "all" ||
+                p.category === activeCategory
+            )
+            .sort(
+              (a, b) =>
+                new Date(b.date) -
+                new Date(a.date)
+            )
+            .slice(0, 6);
+
+
+        grid.innerHTML = list.length
+
+          ? list.map(VERSO.renderCard).join("")
+
+          : `
+            <div
+              class="empty-state"
+              style="grid-column:1/-1;">
+
+              <h3>No articles here yet</h3>
+
+              <p>
+                Try a different category.
+              </p>
+
+            </div>
+          `;
+
+
+        window.VersoLazyLoad();
+
+      }
+
+
+      /* Category filters */
+
+      const chipRow =
+        document.getElementById(
+          "home-category-filters"
+        );
+
+
+      chipRow.innerHTML =
+        [
+          `<button
+             class="chip is-active"
+             data-category="all">
+             All
+           </button>`
+        ]
+
+        .concat(
+          VERSO.categories
+            .slice(0, 6)
+            .map(
+              (c) =>
+                `<button
+                   class="chip"
+                   data-category="${c.id}">
+                   ${c.icon} ${c.name}
+                 </button>`
+            )
+        )
+
+        .join("");
+
+
+      chipRow.addEventListener(
+        "click",
+        (e) => {
+
+          const btn =
+            e.target.closest(".chip");
+
+          if (!btn) return;
+
+          activeCategory =
+            btn.dataset.category;
+
+
+          chipRow
+            .querySelectorAll(".chip")
+            .forEach(
+              (c) =>
+                c.classList.toggle(
+                  "is-active",
+                  c === btn
+                )
+            );
+
+
+          renderGrid();
+
+        }
+      );
+
+
+      renderGrid();
+
+
+      /* Sidebar */
+
+      VERSO.renderCategoryList(
+        "#sidebar-categories"
+      );
+
+      VERSO.renderPopularPosts(
+        "#sidebar-popular"
+      );
+
+      VERSO.renderTagCloud(
+        "#sidebar-tags"
+      );
+
+      VERSO.renderCategoryList(
+        "#footer-categories"
+      );
+
+
+      /* Newsletter */
+
+      [
+        ["#sidebar-newsletter-form", true],
+        ["#footer-newsletter-form", false]
+
+      ].forEach(
+        ([selector]) => {
+
+          const form =
+            document.querySelector(selector);
+
+          form?.addEventListener(
+            "submit",
+            (e) => {
+
+              e.preventDefault();
+
+              const input =
+                form.querySelector(
+                  "input[type='email']"
+                );
+
+
+              if (input.checkValidity()) {
+
+                localStorage.setItem(
+                  "verso_subscribed",
+                  "1"
+                );
+
+
+                VersoToast(
+                  "You're subscribed. Welcome aboard!",
+                  "success"
+                );
+
+
+                form.reset();
+
+              } else {
+
+                VersoToast(
+                  "Please enter a valid email address.",
+                  "error"
+                );
+
+              }
+
+            }
+          );
+
+        }
+      );
+      /* Sidebar search */
+
+      document
+        .getElementById(
+          "sidebar-search-form"
+        )
+        ?.addEventListener(
+          "submit",
+          (e) => {
+
+            e.preventDefault();
+
+            const q =
+              e.target
+                .querySelector("input")
+                .value
+                .trim();
+
+
+            window.location.href =
+              `blog.html?search=${encodeURIComponent(q)}`;
+
+          }
+        );
+
+
+      /* FAQ */
+
+      const faqs = [
+
+        {
+          q: "Is Verso free to read?",
+          a: "Yes — every article on Verso is free, always. The Sunday newsletter is free too."
+        },
+
+        {
+          q: "How often do you publish?",
+          a: "New articles go up two to three times a week, usually on weekday mornings."
+        },
+
+        {
+          q: "Can I pitch a story?",
+          a: "Absolutely. Head to the Contact page and choose \"Pitch an idea\" from the subject line."
+        },
+
+        {
+          q: "Do you accept guest writers?",
+          a: "We do, on a rolling basis. We look for a strong point of view over a long résumé."
+        }
+
+      ];
+
+
+      document.getElementById(
+        "faq-list"
+      ).innerHTML = faqs
+
+        .map(
+          (f, i) => `
+
+            <div class="faq-item">
+
+              <button
+                class="faq-question"
+                aria-expanded="false"
+                aria-controls="faq-a-${i}">
+
+                ${f.q}
+
+                <span class="faq-question__icon">
+                  +
+                </span>
+
+              </button>
+
+              <div
+                class="faq-answer"
+                id="faq-a-${i}">
+
+                <div class="faq-answer__inner">
+                  ${f.a}
+                </div>
+
+              </div>
+
+            </div>
+
+          `
+        )
+
+        .join("");
+
+
+      document
+        .querySelectorAll(".faq-question")
+        .forEach(
+          (btn) => {
+
+            btn.addEventListener(
+              "click",
+              () => {
+
+                const item =
+                  btn.closest(".faq-item");
+
+                const answer =
+                  item.querySelector(
+                    ".faq-answer"
+                  );
+
+
+                const isOpen =
+                  item.classList.toggle(
+                    "is-open"
+                  );
+
+
+                btn.setAttribute(
+                  "aria-expanded",
+                  String(isOpen)
+                );
+
+
+                answer.style.maxHeight =
+                  isOpen
+                    ? answer.scrollHeight + "px"
+                    : "0px";
+
+              }
+            );
+
+          }
+        );
+
+    })();
+
+  </script>
+
+</body>
+</html>

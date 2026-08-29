@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Verso</title>
+  <meta name="description" content="Get in touch with the Verso editorial team — pitch a story, report an issue, or just say hello.">
+  <meta name="theme-color" content="#F6F2E9">
+  <link rel="canonical" href="https://www.versoblog.example/contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact — Verso">
+  <meta property="og:description" content="Get in touch with the Verso editorial team.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="images/placeholder.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/xmc.css">
+  <link rel="stylesheet" href="css/ree.css">
+  <script src="js/theme.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo"><span class="logo__mark">V</span>Verso</a>
+      <nav class="nav-menu" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="is-active">Contact</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn search-toggle" aria-label="Open search" title="Search (press /)">
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        </button>
+        <button class="icon-btn theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle theme (press t)">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="19" height="19" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="19" height="19" fill="currentColor"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8 6 18M18 6l1.8-1.8" stroke="currentColor" stroke-width="1.6"/></svg>
+        </button>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="search-panel">
+    <div class="search-panel__inner">
+      <div class="search-panel__header">
+        <form role="search" style="flex:1; display:flex;"><input type="search" class="search-input" placeholder="Search articles, topics, tags…" aria-label="Search articles"></form>
+        <button type="button" class="search-panel__close" aria-label="Close search">✕</button>
+      </div>
+      <div class="search-suggestions"><p class="search-suggestions__hint">Type at least two characters to search titles, tags, and categories.</p></div>
+    </div>
+  </div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow" style="justify-content:center;">Let's talk</span>
+        <h1 class="page-hero__title">Get in touch</h1>
+        <p class="page-hero__sub">Pitch a story, flag a correction, or just tell us what you'd like to read more of. We read every message.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-grid">
+        <div>
+          <form class="contact-form" novalidate>
+            <div class="field">
+              <label for="cf-name">Full name</label>
+              <input type="text" id="cf-name" name="name" required placeholder="Jordan Lee">
+              <span class="field-error" data-error-for="name"></span>
+            </div>
+            <div class="field">
+              <label for="cf-email">Email address</label>
+              <input type="email" id="cf-email" name="email" required placeholder="jordan@example.com">
+              <span class="field-error" data-error-for="email"></span>
+            </div>
+            <div class="field">
+              <label for="cf-subject">Subject</label>
+              <select id="cf-subject" name="subject" required>
+                <option value="">Choose a topic…</option>
+                <option>Pitch an idea</option>
+                <option>Report an error</option>
+                <option>Advertising inquiry</option>
+                <option>Something else</option>
+              </select>
+              <span class="field-error" data-error-for="subject"></span>
+            </div>
+            <div class="field">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" required placeholder="What's on your mind?" rows="6"></textarea>
+              <div style="display:flex; justify-content:space-between;">
+                <span class="field-error" data-error-for="message"></span>
+                <span class="char-counter">0 characters</span>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Send message</button>
+            <p class="field-hint" style="text-align:center;">We typically reply within two business days.</p>
+          </form>
+
+          <div class="contact-success" hidden tabindex="-1">
+            <div class="contact-success__icon">
+              <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L19 7"/></svg>
+            </div>
+            <h2 class="section-title" style="font-size:1.5rem;">Message sent</h2>
+            <p>Thanks for reaching out — someone from the team will reply within two business days.</p>
+            <button class="btn btn-secondary contact-success__reset" style="margin-top:1rem;">Send another message</button>
+          </div>
+        </div>
+
+        <div>
+          <div class="contact-info-card">
+            <div class="contact-info-card__row">
+              <span>✉️</span>
+              <div><strong>Email</strong><br><a class="text-link" href="mailto:ramjadhav9592@gmail.com">ramjadhav9592@gmail.com</a></div>
+            </div>
+            <div class="contact-info-card__row">
+              <span>📍</span>
+              <div><strong>Studio</strong><br>142 Fernbank Row, Reading Quarter, London EC2</div>
+            </div>
+            <div class="contact-info-card__row">
+              <span>⏱️</span>
+              <div><strong>Response time</strong><br>Within 2 business days</div>
+            </div>
+          </div>
+
+          <div class="map-placeholder">
+            <strong>Map placeholder</strong>
+            <span>Embed your Google Maps iframe here — omitted from this static build to avoid an external API key.</span>
+          </div>
+
+          <div class="widget" style="margin-top:1.25rem;">
+            <h3 class="widget__title">Follow along</h3>
+            <div class="social-links">
+              <a href="#" aria-label="Twitter">𝕏</a>
+              <a href="#" aria-label="Instagram">◎</a>
+              <a href="#" aria-label="LinkedIn">in</a>
+              <a href="#" aria-label="RSS feed">RSS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-col footer-about">
+        <a href="index.html" class="logo"><span class="logo__mark">V</span>Verso</a>
+        <p>A reading room for technology, design, science, and the way we live now. Published by a small, independent editorial team.</p>
+        <div class="social-links" style="margin-top:1.25rem;"><a href="#" aria-label="Twitter">𝕏</a><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="RSS feed">RSS</a></div>
+      </div>
+      <div class="footer-col"><h4>Quick links</h4><ul><li><a href="index.html">Home</a></li><li><a href="blog.html">Blog</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li></ul></div>
+      <div class="footer-col"><h4>Categories</h4><ul id="footer-categories"></ul></div>
+      <div class="footer-col footer-newsletter">
+        <h4>Stay in the loop</h4>
+        <p style="color:rgba(246,242,233,0.65); font-size:0.88rem;">No spam. Unsubscribe anytime.</p>
+        <form id="footer-newsletter-form"><input type="email" required placeholder="Your email" aria-label="Email address"><button type="submit">Join</button></form>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span data-year></span> Verso. All rights reserved.</p>
+      <div class="social-links"><a href="#" aria-label="Twitter">𝕏</a><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="LinkedIn">in</a></div>
+    </div>
+  </footer>
+
+  <button class="scroll-top-btn" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="js/blog.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/contact.js"></script>
+  <script>
+    VERSO.renderCategoryList("#footer-categories");
+    document.querySelector("#footer-newsletter-form")?.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const input = e.target.querySelector("input[type='email']");
+      if (input.checkValidity()) {
+        localStorage.setItem("verso_subscribed", "1");
+        VersoToast("You're subscribed. Welcome aboard!", "success");
+        e.target.reset();
+      } else {
+        VersoToast("Please enter a valid email address.", "error");
+      }
+    });
+  </script>
+</body>
+</html>
