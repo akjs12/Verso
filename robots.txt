@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /404.html
 
-Sitemap: https://www.versoblog.example/sitemap.xml
+Sitemap: https://riclogmieer.netlify.app/sitemap.xml
