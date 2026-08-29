@@ -1,49 +1,33 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://www.versoblog.example/index.html</loc>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.versoblog.example/blog.html</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.versoblog.example/about.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.versoblog.example/contact.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.versoblog.example/privacy.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <!-- Individual post URLs (generated from js/blog.js post slugs) -->
-  <url><loc>https://www.versoblog.example/post.html?slug=quiet-power-of-slow-software</loc><priority>0.7</priority></url>
-  <url><loc>https://www.versoblog.example/post.html?slug=css-grid-patterns-you-actually-need</loc><priority>0.7</priority></url>
-  <url><loc>https://www.versoblog.example/post.html?slug=four-day-week-six-months-later</loc><priority>0.7</priority></url>
-  <url><loc>https://www.versoblog.example/post.html?slug=inside-a-decade-long-telescope-project</loc><priority>0.7</priority></url>
-  <url><loc>https://www.versoblog.example/post.html?slug=notes-from-three-weeks-in-kyoto</loc><priority>0.7</priority></url>
-  <url><loc>https://www.versoblog.example/post.html?slug=the-hidden-cost-of-context-switching</loc><priority>0.7</priority></url>
-  <url><loc>https://www.versoblog.example/post.html?slug=designing-for-people-who-hate-forms</loc><priority>0.7</priority></url>
-  <url><loc>https://www.versoblog.example/post.html?slug=what-open-source-maintainers-actually-do</loc><priority>0.7</priority></url>
-  <url><loc>https://www.versoblog.example/post.html?slug=the-economics-of-a-five-dollar-coffee</loc><priority>0.7</priority></url>
-  <url><loc>https://www.versoblog.example/post.html?slug=sleep-is-not-a-productivity-hack</loc><priority>0.7</priority></url>
-  <url><loc>https://www.versoblog.example/post.html?slug=a-short-history-of-the-hyperlink</loc><priority>0.7</priority></url>
-  <url><loc>https://www.versoblog.example/post.html?slug=building-an-accessible-color-system</loc><priority>0.7</priority></url>
-  <url><loc>https://www.versoblog.example/post.html?slug=the-quiet-return-of-the-personal-website</loc><priority>0.7</priority></url>
-  <url><loc>https://www.versoblog.example/post.html?slug=how-startups-actually-decide-on-pricing</loc><priority>0.7</priority></url>
-  <url><loc>https://www.versoblog.example/post.html?slug=the-case-for-boring-technology</loc><priority>0.7</priority></url>
-  <url><loc>https://www.versoblog.example/post.html?slug=what-a-decade-of-climate-data-shows</loc><priority>0.7</priority></url>
-  <url><loc>https://www.versoblog.example/post.html?slug=how-to-read-a-financial-statement-in-ten-minutes</loc><priority>0.7</priority></url>
-  <url><loc>https://www.versoblog.example/post.html?slug=the-lost-art-of-the-long-walk</loc><priority>0.7</priority></url>
-  <url><loc>https://www.versoblog.example/post.html?slug=the-architecture-of-a-good-library</loc><priority>0.7</priority></url>
-  <url><loc>https://www.versoblog.example/post.html?slug=everything-we-got-wrong-about-remote-work</loc><priority>0.7</priority></url>
+<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">  <url>
+    <loc>https://riclogmieer.netlify.app/</loc>
+  </url>  <url>
+    <loc>https://riclogmieer.netlify.app/blog.html</loc>
+  </url>  <url>
+    <loc>https://riclogmieer.netlify.app/about.html</loc>
+  </url>  <url>
+    <loc>https://riclogmieer.netlify.app/contact.html</loc>
+  </url>  <url>
+    <loc>https://riclogmieer.netlify.app/privacy.html</loc>
+  </url><url><loc>https://riclogmieer.netlify.app/post.html?slug=how-ai-is-changing-student-learning-2026</loc></url>
+<url><loc>https://riclogmieer.netlify.app/post.html?slug=c-programming-why-it-still-matters-2026</loc></url>
+<url><loc>https://riclogmieer.netlify.app/post.html?slug=thomas-alva-edison-history-inventor</loc></url>
+<url><loc>https://riclogmieer.netlify.app/post.html?slug=four-day-week-six-months-later</loc></url>
+<url><loc>https://riclogmieer.netlify.app/post.html?slug=inside-a-decade-long-telescope-project</loc></url>
+<url><loc>https://riclogmieer.netlify.app/post.html?slug=notes-from-three-weeks-in-kyoto</loc></url>
+<url><loc>https://riclogmieer.netlify.app/post.html?slug=the-hidden-cost-of-context-switching</loc></url>
+<url><loc>https://riclogmieer.netlify.app/post.html?slug=designing-for-people-who-hate-forms</loc></url>
+<url><loc>https://riclogmieer.netlify.app/post.html?slug=what-open-source-maintainers-actually-do</loc></url>
+<url><loc>https://riclogmieer.netlify.app/post.html?slug=the-economics-of-a-five-dollar-coffee</loc></url>
+<url><loc>https://riclogmieer.netlify.app/post.html?slug=sleep-is-not-a-productivity-hack</loc></url>
+<url><loc>https://riclogmieer.netlify.app/post.html?slug=a-short-history-of-the-hyperlink</loc></url>
+<url><loc>https://riclogmieer.netlify.app/post.html?slug=nepal-flood-disaster-2026-rescue-operation</loc></url>
+<url><loc>https://riclogmieer.netlify.app/post.html?slug=the-quiet-return-of-the-personal-website</loc></url>
+<url><loc>https://riclogmieer.netlify.app/post.html?slug=how-startups-actually-decide-on-pricing</loc></url>
+<url><loc>https://riclogmieer.netlify.app/post.html?slug=nashik-history-culture-places-to-visit</loc></url>
+<url><loc>https://riclogmieer.netlify.app/post.html?slug=what-a-decade-of-climate-data-shows</loc></url>
+<url><loc>https://riclogmieer.netlify.app/post.html?slug=how-to-read-a-financial-statement-in-ten-minutes</loc></url>
+<url><loc>https://riclogmieer.netlify.app/post.html?slug=the-lost-art-of-the-long-walk</loc></url>
+<url><loc>https://riclogmieer.netlify.app/post.html?slug=the-architecture-of-a-good-library</loc></url>
+<url><loc>https://riclogmieer.netlify.app/post.html?slug=ibps-po-vs-clerk-complete-guide-2026</loc></url>
+
 </urlset>
