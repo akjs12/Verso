@@ -1,0 +1,1248 @@
+/* =========================================================================
+   responsive.css — Verso Blog
+   The base stylesheet is written desktop-first for readability of the
+   component code, so this file overrides downward at each breakpoint.
+   Breakpoints: 1080px (small desktop/tablet landscape), 860px (tablet),
+   640px (mobile).
+   ========================================================================= */
+
+/* ---------------------------------------------------------------------
+   ≤ 1080px — tighten grids, collapse the post page's 3-column layout
+   --------------------------------------------------------------------- */
+@media (max-width: 1080px) {
+  .grid-main { grid-template-columns: 1fr; }
+  .sidebar { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .sidebar .widget { margin-bottom: 0; }
+
+  .post-layout { grid-template-columns: 1fr; }
+  .post-toc { display: none; }
+  .share-rail { flex-direction: row; position: static; justify-content: center; }
+
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+  .featured-strip { grid-template-columns: repeat(2, 1fr); }
+  .related-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .team-grid { grid-template-columns: repeat(3, 1fr); }
+  .value-grid { grid-template-columns: repeat(2, 1fr); }
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ---------------------------------------------------------------------
+   ≤ 860px — tablet: stack the hero, switch nav to the mobile drawer
+   --------------------------------------------------------------------- */
+@media (max-width: 860px) {
+  :root { --header-h: 68px; }
+
+  .nav-toggle { display: flex; }
+  .nav-menu {
+    position: fixed; top: var(--header-h); left: 0; right: 0; bottom: 0;
+    background: var(--paper); flex-direction: column; align-items: flex-start;
+    padding: 2rem 1.5rem; gap: 0.25rem; transform: translateX(-100%);
+    transition: transform var(--transition); overflow-y: auto; z-index: 199;
+  }
+  .nav-menu.is-open { transform: translateX(0); }
+  .nav-menu a { width: 100%; padding: 0.9rem 0; font-size: 1.1rem; border-bottom: 1px solid var(--line); }
+
+  .hero__grid { grid-template-columns: 1fr; }
+  .hero__feature { aspect-ratio: 16/10; order: -1; }
+  .hero__stats { gap: 1.5rem; }
+
+  .contact-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr 1fr; padding-top: 3rem; }
+  .footer-about { grid-column: 1 / -1; }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .value-grid { grid-template-columns: 1fr; }
+  .post-nav { grid-template-columns: 1fr; }
+  .related-grid { grid-template-columns: 1fr 1fr; }
+  .card--list { flex-direction: column; }
+  .card--list .card__image-link { width: 100%; }
+}
+
+/* ---------------------------------------------------------------------
+   ≤ 640px — mobile
+   --------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .container { padding: 0 1.1rem; }
+  .section { padding: 3rem 0; }
+
+  .site-header .header-actions .icon-btn.search-toggle { display: inline-flex; }
+  .logo { font-size: 1.2rem; }
+  .logo__mark { width: 30px; height: 30px; font-size: 0.9rem; }
+
+  .hero { padding: 2.5rem 0 3rem; }
+  .hero__title { font-size: 2rem; }
+  .hero__actions .btn { flex: 1; }
+
+  .card-grid, .card-grid--2col, .featured-strip, .related-grid, .sidebar, .stat-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .listing-toolbar { flex-direction: column; align-items: stretch; }
+  .listing-toolbar__filters { justify-content: flex-start; }
+
+  .footer-top { grid-template-columns: 1fr; text-align: left; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+
+  .post-title { font-size: 1.7rem; }
+  .post-toolbar { justify-content: center; }
+  .author-box { flex-direction: column; text-align: center; }
+  .author-box img { margin: 0 auto; }
+  .comment--reply { margin-left: 1.2rem; }
+
+  .search-panel { padding: 4vh 1rem; }
+
+  .scroll-top-btn { right: 1rem; bottom: 1rem; }
+  .toast-host { left: 1rem; right: 1rem; }
+  .toast { max-width: none; }
+
+  .newsletter-popup__card { padding: 2rem 1.4rem; }
+  .newsletter-popup form { flex-direction: column; }
+}
+
+/* Extra small phones */
+@media (max-width: 380px) {
+  .hero__stats { gap: 1rem; }
+  .hero__stat-value { font-size: 1.5rem; }
+}
+
+/* =========================================================================
+   VERSO BLOG — SMOOTH ANIMATIONS
+   Add this at the END of responsive.css
+   No HTML / structure changes required
+   ========================================================================= */
+
+/* ---------------------------------------------------------------------
+   1. Global smooth scrolling
+   --------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* ---------------------------------------------------------------------
+   2. Page load animation
+   --------------------------------------------------------------------- */
+body {
+  animation: pageFadeIn 0.7s ease both;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* ---------------------------------------------------------------------
+   3. Hero animation
+   --------------------------------------------------------------------- */
+.hero__feature {
+  animation: heroImageIn 0.9s ease-out both;
+}
+
+.hero__title {
+  animation: heroTitleIn 0.8s ease-out 0.1s both;
+}
+
+.hero__actions {
+  animation: heroActionsIn 0.8s ease-out 0.25s both;
+}
+
+.hero__stats {
+  animation: heroStatsIn 0.8s ease-out 0.4s both;
+}
+
+@keyframes heroImageIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes heroTitleIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroActionsIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroStatsIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ---------------------------------------------------------------------
+   4. Cards hover animation
+   --------------------------------------------------------------------- */
+.card {
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.10);
+}
+
+
+/* ---------------------------------------------------------------------
+   5. Card images zoom
+   --------------------------------------------------------------------- */
+.card__image,
+.card__image-link img,
+.hero__feature img {
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card__image,
+.card:hover .card__image-link img {
+  transform: scale(1.04);
+}
+
+.hero__feature:hover img {
+  transform: scale(1.03);
+}
+
+
+/* ---------------------------------------------------------------------
+   6. Buttons
+   --------------------------------------------------------------------- */
+.btn {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+
+/* ---------------------------------------------------------------------
+   7. Navigation links
+   --------------------------------------------------------------------- */
+.nav-menu a {
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+
+/* ---------------------------------------------------------------------
+   8. Logo animation
+   --------------------------------------------------------------------- */
+.logo {
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: translateY(-2px);
+}
+
+.logo__mark {
+  transition: transform 0.4s ease;
+}
+
+.logo:hover .logo__mark {
+  transform: rotate(-8deg) scale(1.08);
+}
+
+
+/* ---------------------------------------------------------------------
+   9. Icon buttons
+   --------------------------------------------------------------------- */
+.icon-btn {
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.icon-btn:hover {
+  transform: scale(1.08);
+}
+
+
+/* ---------------------------------------------------------------------
+   10. Section headings
+   --------------------------------------------------------------------- */
+.section h2,
+.section h3 {
+  transition: transform 0.3s ease;
+}
+
+.section h2:hover,
+.section h3:hover {
+  transform: translateX(4px);
+}
+
+
+/* ---------------------------------------------------------------------
+   11. Featured strip animation
+   --------------------------------------------------------------------- */
+.featured-strip .card {
+  animation: cardReveal 0.7s ease both;
+}
+
+.featured-strip .card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.featured-strip .card:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.featured-strip .card:nth-child(3) {
+  animation-delay: 0.19s;
+}
+
+.featured-strip .card:nth-child(4) {
+  animation-delay: 0.26s;
+}
+
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ---------------------------------------------------------------------
+   12. Sidebar widgets
+   --------------------------------------------------------------------- */
+.sidebar .widget {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.sidebar .widget:hover {
+  transform: translateY(-4px);
+}
+
+
+/* ---------------------------------------------------------------------
+   13. Author box
+   --------------------------------------------------------------------- */
+.author-box {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.author-box:hover {
+  transform: translateY(-4px);
+}
+
+.author-box img {
+  transition: transform 0.4s ease;
+}
+
+.author-box:hover img {
+  transform: scale(1.06);
+}
+
+
+/* ---------------------------------------------------------------------
+   14. Gallery
+   --------------------------------------------------------------------- */
+.gallery-grid img {
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
+}
+
+.gallery-grid a {
+  overflow: hidden;
+  display: block;
+}
+
+.gallery-grid a:hover img {
+  transform: scale(1.08);
+}
+
+
+/* ---------------------------------------------------------------------
+   15. Social icons
+   --------------------------------------------------------------------- */
+.social-links a {
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-4px) scale(1.05);
+}
+
+
+/* ---------------------------------------------------------------------
+   16. Newsletter popup
+   --------------------------------------------------------------------- */
+.newsletter-popup__card {
+  animation: popupIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes popupIn {
+  from {
+    opacity: 0;
+    transform: translateY(35px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* ---------------------------------------------------------------------
+   17. Search panel
+   --------------------------------------------------------------------- */
+.search-panel {
+  animation: searchIn 0.35s ease both;
+}
+
+@keyframes searchIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ---------------------------------------------------------------------
+   18. Scroll-to-top button
+   --------------------------------------------------------------------- */
+.scroll-top-btn {
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.scroll-top-btn:hover {
+  transform: translateY(-5px);
+}
+
+
+/* ---------------------------------------------------------------------
+   19. Post page animation
+   --------------------------------------------------------------------- */
+.post-title {
+  animation: postTitleIn 0.7s ease both;
+}
+
+.post-toolbar {
+  animation: postToolbarIn 0.7s ease 0.15s both;
+}
+
+.post-content {
+  animation: postContentIn 0.8s ease 0.25s both;
+}
+
+@keyframes postTitleIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes postToolbarIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes postContentIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ---------------------------------------------------------------------
+   20. Mobile: keep animations lighter
+   --------------------------------------------------------------------- */
+@media (max-width: 640px) {
+
+  .card:hover {
+    transform: translateY(-4px);
+  }
+
+  .hero__feature:hover img {
+    transform: none;
+  }
+
+  .gallery-grid a:hover img {
+    transform: scale(1.04);
+  }
+}
+
+
+/* ---------------------------------------------------------------------
+   21. Accessibility: reduce motion
+   --------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =========================================================================
+   VERSO BLOG — PREMIUM MOTION SYSTEM
+   CSS ONLY | NO HTML STRUCTURE CHANGE
+   ========================================================================= */
+
+
+/* -------------------------------------------------------------------------
+   1. SMOOTH PAGE ENTRY
+   ------------------------------------------------------------------------- */
+
+body {
+  animation: versoPageIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes versoPageIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* -------------------------------------------------------------------------
+   2. HEADER
+   ------------------------------------------------------------------------- */
+
+.site-header {
+  animation: headerDrop 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes headerDrop {
+  from {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* -------------------------------------------------------------------------
+   3. LOGO
+   ------------------------------------------------------------------------- */
+
+.logo {
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.25s ease;
+}
+
+.logo:hover {
+  transform: translateY(-2px);
+}
+
+.logo__mark {
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    border-radius 0.4s ease;
+}
+
+.logo:hover .logo__mark {
+  transform: rotate(12deg) scale(1.1);
+}
+
+
+/* -------------------------------------------------------------------------
+   4. NAVIGATION
+   ------------------------------------------------------------------------- */
+
+.nav-menu a {
+  position: relative;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  transform: translateX(-50%);
+  background: currentColor;
+  transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-menu a:hover {
+  transform: translateY(-2px);
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+
+/* -------------------------------------------------------------------------
+   5. HERO SECTION
+   ------------------------------------------------------------------------- */
+
+.hero__grid {
+  animation: heroContainer 0.8s ease both;
+}
+
+@keyframes heroContainer {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Hero title */
+
+.hero__title {
+  animation: heroTitle 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+}
+
+@keyframes heroTitle {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+    filter: blur(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+
+/* Hero image */
+
+.hero__feature {
+  overflow: hidden;
+  animation: heroFeature 1s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
+}
+
+.hero__feature img {
+  transition:
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.6s ease;
+}
+
+.hero__feature:hover img {
+  transform: scale(1.06);
+}
+
+
+/* -------------------------------------------------------------------------
+   6. HERO BUTTONS
+   ------------------------------------------------------------------------- */
+
+.hero__actions {
+  animation: heroActions 0.8s ease 0.35s both;
+}
+
+@keyframes heroActions {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero__actions .btn {
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease;
+}
+
+.hero__actions .btn:hover {
+  transform: translateY(-4px);
+}
+
+
+/* -------------------------------------------------------------------------
+   7. HERO STATS
+   ------------------------------------------------------------------------- */
+
+.hero__stats {
+  animation: statsReveal 0.8s ease 0.5s both;
+}
+
+@keyframes statsReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero__stat {
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.hero__stat:hover {
+  transform: translateY(-5px);
+}
+
+
+/* -------------------------------------------------------------------------
+   8. ALL BLOG CARDS
+   ------------------------------------------------------------------------- */
+
+.card {
+  position: relative;
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+}
+
+
+/* -------------------------------------------------------------------------
+   9. CARD IMAGE
+   ------------------------------------------------------------------------- */
+
+.card__image-link {
+  overflow: hidden;
+  display: block;
+}
+
+.card__image-link img {
+  transition:
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.5s ease;
+}
+
+.card:hover .card__image-link img {
+  transform: scale(1.07);
+}
+
+
+/* -------------------------------------------------------------------------
+   10. CARD CONTENT
+   ------------------------------------------------------------------------- */
+
+.card__title {
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.card:hover .card__title {
+  transform: translateX(3px);
+}
+
+
+/* -------------------------------------------------------------------------
+   11. STAGGERED CARD ENTRANCE
+   ------------------------------------------------------------------------- */
+
+.card-grid .card,
+.related-grid .card,
+.featured-strip .card {
+  animation: cardEntrance 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.card-grid .card:nth-child(1),
+.related-grid .card:nth-child(1),
+.featured-strip .card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.card-grid .card:nth-child(2),
+.related-grid .card:nth-child(2),
+.featured-strip .card:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.card-grid .card:nth-child(3),
+.related-grid .card:nth-child(3),
+.featured-strip .card:nth-child(3) {
+  animation-delay: 0.19s;
+}
+
+.card-grid .card:nth-child(4),
+.related-grid .card:nth-child(4),
+.featured-strip .card:nth-child(4) {
+  animation-delay: 0.26s;
+}
+
+.card-grid .card:nth-child(5),
+.related-grid .card:nth-child(5),
+.featured-strip .card:nth-child(5) {
+  animation-delay: 0.33s;
+}
+
+.card-grid .card:nth-child(6),
+.related-grid .card:nth-child(6),
+.featured-strip .card:nth-child(6) {
+  animation-delay: 0.40s;
+}
+
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* -------------------------------------------------------------------------
+   12. CATEGORY / TAGS
+   ------------------------------------------------------------------------- */
+
+.tag,
+.category,
+.badge {
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.tag:hover,
+.category:hover,
+.badge:hover {
+  transform: translateY(-2px) scale(1.03);
+}
+
+
+/* -------------------------------------------------------------------------
+   13. SIDEBAR
+   ------------------------------------------------------------------------- */
+
+.sidebar .widget {
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease;
+}
+
+.sidebar .widget:hover {
+  transform: translateY(-5px);
+}
+
+
+/* -------------------------------------------------------------------------
+   14. AUTHOR
+   ------------------------------------------------------------------------- */
+
+.author-box {
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.author-box:hover {
+  transform: translateY(-5px);
+}
+
+.author-box img {
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.author-box:hover img {
+  transform: scale(1.08) rotate(2deg);
+}
+
+
+/* -------------------------------------------------------------------------
+   15. TEAM CARDS
+   ------------------------------------------------------------------------- */
+
+.team-grid > * {
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s ease;
+}
+
+.team-grid > *:hover {
+  transform: translateY(-8px);
+}
+
+
+/* -------------------------------------------------------------------------
+   16. GALLERY
+   ------------------------------------------------------------------------- */
+
+.gallery-grid a {
+  display: block;
+  overflow: hidden;
+}
+
+.gallery-grid img {
+  transition:
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.5s ease;
+}
+
+.gallery-grid a:hover img {
+  transform: scale(1.1);
+}
+
+
+/* -------------------------------------------------------------------------
+   17. SOCIAL LINKS
+   ------------------------------------------------------------------------- */
+
+.social-links a {
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.25s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-5px) rotate(-3deg);
+}
+
+
+/* -------------------------------------------------------------------------
+   18. ICON BUTTONS
+   ------------------------------------------------------------------------- */
+
+.icon-btn {
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.25s ease;
+}
+
+.icon-btn:hover {
+  transform: translateY(-2px) scale(1.08);
+}
+
+.icon-btn:active {
+  transform: scale(0.92);
+}
+
+
+/* -------------------------------------------------------------------------
+   19. POST PAGE
+   ------------------------------------------------------------------------- */
+
+.post-title {
+  animation: postHeading 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes postHeading {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.post-toolbar {
+  animation: toolbarIn 0.7s ease 0.2s both;
+}
+
+@keyframes toolbarIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* -------------------------------------------------------------------------
+   20. POST CONTENT
+   ------------------------------------------------------------------------- */
+
+.post-content {
+  animation: contentIn 0.9s ease 0.3s both;
+}
+
+@keyframes contentIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* -------------------------------------------------------------------------
+   21. POST IMAGES
+   ------------------------------------------------------------------------- */
+
+.post-content img {
+  transition:
+    transform 0.6s ease,
+    box-shadow 0.4s ease;
+}
+
+.post-content img:hover {
+  transform: scale(1.015);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+
+/* -------------------------------------------------------------------------
+   22. FOOTER
+   ------------------------------------------------------------------------- */
+
+.footer-top > * {
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.footer-top > *:hover {
+  transform: translateY(-3px);
+}
+
+
+/* -------------------------------------------------------------------------
+   23. SEARCH PANEL
+   ------------------------------------------------------------------------- */
+
+.search-panel {
+  animation: searchPanelIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes searchPanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* -------------------------------------------------------------------------
+   24. NEWSLETTER POPUP
+   ------------------------------------------------------------------------- */
+
+.newsletter-popup__card {
+  animation: newsletterIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes newsletterIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* -------------------------------------------------------------------------
+   25. SCROLL TOP
+   ------------------------------------------------------------------------- */
+
+.scroll-top-btn {
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s ease;
+}
+
+.scroll-top-btn:hover {
+  transform: translateY(-6px) scale(1.08);
+}
+
+
+/* -------------------------------------------------------------------------
+   26. BUTTON PRESS
+   ------------------------------------------------------------------------- */
+
+button,
+.btn {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:active,
+.btn:active {
+  transform: scale(0.96);
+}
+
+
+/* -------------------------------------------------------------------------
+   27. MOBILE OPTIMIZATION
+   ------------------------------------------------------------------------- */
+
+@media (max-width: 640px) {
+
+  .card:hover {
+    transform: translateY(-4px);
+  }
+
+  .card:hover .card__image-link img {
+    transform: scale(1.04);
+  }
+
+  .hero__feature:hover img {
+    transform: scale(1.02);
+  }
+
+  .team-grid > *:hover {
+    transform: translateY(-4px);
+  }
+
+  .nav-menu a:hover {
+    transform: translateX(5px);
+  }
+}
+
+
+/* -------------------------------------------------------------------------
+   28. REDUCED MOTION
+   ------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
