@@ -6,7 +6,7 @@
   <title id="doc-title">Article — Verso</title>
   <meta id="meta-description" name="description" content="Read this article on Verso.">
   <meta name="theme-color" content="#F6F2E9">
-  <link id="canonical-link" rel="canonical" href="https://www.versoblog.example/post.html">
+  <link id="canonical-link" rel="canonical" href="https://riclogmieer.netlify.app/">
 
   <meta id="og-type" property="og:type" content="article">
   <meta id="og-title" property="og:title" content="Verso">
@@ -241,7 +241,7 @@
       // --- Meta tags / SEO -------------------------------------------------
       document.getElementById("doc-title").textContent = `${post.title} — Verso`;
       document.getElementById("meta-description").setAttribute("content", post.excerpt);
-      document.getElementById("canonical-link").setAttribute("href", `https://www.versoblog.example/post.html?slug=${post.slug}`);
+      document.getElementById("canonical-link").setAttribute("href", `https://riclogmieer.netlify.app/post.html?slug=${post.slug}`);
       document.getElementById("og-title").setAttribute("content", post.title);
       document.getElementById("og-description").setAttribute("content", post.excerpt);
       document.getElementById("og-image").setAttribute("content", post.image);
@@ -255,7 +255,7 @@
         "datePublished": post.date,
         "author": { "@type": "Person", "name": author.name },
         "publisher": { "@type": "Organization", "name": "Verso" },
-        "mainEntityOfPage": `https://www.versoblog.example/post.html?slug=${post.slug}`
+        "mainEntityOfPage": `https://riclogmieer.netlify.app/post.html?slug=${post.slug}`
       });
 
       // --- Hero / byline -----------------------------------------------
